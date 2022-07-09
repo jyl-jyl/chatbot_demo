@@ -1,5 +1,5 @@
 import nltk
-nltk.data.path.append('./nltk_data')
+# nltk.data.path.append('./nltk_data')
 nltk.download('punkt')
 nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer
