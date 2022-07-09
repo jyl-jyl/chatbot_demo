@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Chatbot</title>
+{% endblock %}
+
+
+
+{% block body %}
+
+
+<div class="container">
+	<h1>Welcome to Jingyi's Chatbot Demo</h1>
+	<br>
+	<hr>
+	<br>
+
+	<form action='/chatbot'class="row" method="POST">
+		<div class="col-lg-9">
+			<input class="form-control" type="text" name="question" id="question">
+		</div>
+		<div class="col-lg-3">
+			<button class="btn btn-primary btn-block" id="submit-button" type="submit">Submit</button>
+		</div>
+	</form>
+	<br>
+	<div class="row">
+		<div class="col-md-6">
+			{% for item in history %}
+
+			<p id="response">
+				<span>Me: </span>
+				<span>{{ item.question }}</span>
+			</p>
+			<p id="response">
+				<span>Chatbot: </span>
+				<span>{{ item.answer }}</span>
+			</p>
+			<br>
+			<hr>
+			<br>
+			{% endfor %}
+		</div>
+	</div>
+
+</div>
+
+
+
+{% endblock %}
+
+
+
+
