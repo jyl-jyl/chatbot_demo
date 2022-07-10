@@ -26,7 +26,7 @@
 	<br>
 	<div class="row">
 		<div class="col-md-6">
-			{% for item in history %}
+			{% for item in history|reverse %}
 
 			<p id="response">
 				<span>Me: </span>
@@ -36,9 +36,7 @@
 				<span>Chatbot: </span>
 				<span>{{ item.answer }}</span>
 			</p>
-			<br>
 			<hr>
-			<br>
 			{% endfor %}
 		</div>
 	</div>
