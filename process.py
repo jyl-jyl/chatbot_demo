@@ -4,6 +4,7 @@ from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import pickle
 import numpy as np
+from pywsd.utils import lemmatize_sentence
 
 from keras.models import load_model
 model = load_model('chatbot_model.h5')
@@ -15,7 +16,8 @@ classes = pickle.load(open('classes.pkl', 'rb'))
 
 def clean_up_sentence(sentence):
 	sentence_words = nltk.word_tokenize(sentence)
-	sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
+	sentence_words = [lemmatize_sentence(word.lower()) for word in sentence_words]
+	# sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
 	return sentence_words
 
 
